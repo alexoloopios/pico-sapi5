@@ -108,6 +108,19 @@ if ($Installer) {
     Invoke-Step 'Compiling the installer' {
         & $iscc (Join-Path $root 'installer\pico_sapi5.iss')
     }
+
+    # The installer is attached to a release rather than committed, so this is
+    # the last chance to see what was actually produced. The hash is mainly a
+    # check that the file being uploaded is the one this run built and not one
+    # left over in dist\; publishing it alongside the download is optional.
+    $setup = Get-ChildItem (Join-Path $distDir 'PicoSAPI5-*-setup.exe') |
+             Sort-Object LastWriteTime | Select-Object -Last 1
+    if ($setup) {
+        $hash = (Get-FileHash -Algorithm SHA256 -Path $setup.FullName).Hash.ToLower()
+        Write-Host ""
+        Write-Host "  $($setup.Name)  ($([math]::Round($setup.Length / 1MB, 2)) MB)"
+        Write-Host "  SHA-256: $hash"
+    }
 }
 
 Write-Host ""
