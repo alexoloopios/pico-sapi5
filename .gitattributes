@@ -1,0 +1,19 @@
+# Most of this repository by weight is the Pico lingware, and the sample WAVs are
+# most of the rest. Marking them explicitly means git never applies end-of-line
+# conversion to them, whatever the checkout platform's defaults happen to be --
+# a corrupted .bin does not fail to load, it just makes the voice wrong.
+* text=auto
+
+*.bin binary
+*.wav binary
+*.dll binary
+*.exe binary
+*.lib binary
+
+# Inno Setup compiles this; keep it in the form the compiler expects.
+*.iss text eol=crlf
+
+# The vendored Pico sources under third_party/pico/lib deliberately get the same
+# text=auto treatment as everything else, which stores them with LF exactly as
+# upstream does. That is what keeps a diff against upstream showing only the
+# three changes listed in docs/notes.md, rather than every line of every file.

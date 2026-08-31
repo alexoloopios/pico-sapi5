@@ -1,0 +1,35 @@
+Pico SAPI5
+==========
+
+This installs six text-to-speech voices built on the SVOX Pico engine, and makes
+them available to any application on this computer that uses SAPI 5:
+
+    Pico American English      Pico Spanish
+    Pico British English       Pico French
+    Pico German                Pico Italian
+
+Both a 32-bit and a 64-bit engine are installed, so applications of either kind
+can use the voices. They share one copy of the speech data.
+
+What to expect
+--------------
+
+The voices speak at 16 kHz. They are small, fast and highly intelligible, which
+is what they were designed for; they are not intended to sound like a recording
+of a person.
+
+Rate, pitch and volume all work as they do with any other SAPI 5 voice, and the
+engine reports word and sentence positions as it speaks, so screen readers can
+follow along and highlight what is being said.
+
+Notes
+-----
+
+Administrative rights are required. SAPI only looks for voices in the
+machine-wide part of the registry, so there is no per-user installation.
+
+Applications that are already running, screen readers included, usually need to
+be restarted before a newly installed voice shows up in their voice list.
+
+The SVOX Pico engine and its language data are licensed under the Apache License
+2.0. See LICENSE and NOTICE in the installation folder.

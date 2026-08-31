@@ -1,0 +1,10 @@
+; Exports for the SAPI 5 engine DLL. Only the four COM entry points are public;
+; the vendored pico engine is linked in statically and is built with PICO_STATIC
+; so that none of its symbols leak out alongside them.
+LIBRARY
+
+EXPORTS
+    DllGetClassObject   PRIVATE
+    DllCanUnloadNow     PRIVATE
+    DllRegisterServer   PRIVATE
+    DllUnregisterServer PRIVATE

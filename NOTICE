@@ -1,0 +1,31 @@
+Pico SAPI5
+==========
+
+A SAPI 5 speech engine for Windows built on the SVOX Pico synthesizer.
+
+This product includes software developed by SVOX AG.
+
+   SVOX Pico text-to-speech engine and language data
+   Copyright (C) 2008-2009 SVOX AG, Baslerstr. 30, 8048 Zuerich, Switzerland
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+The engine sources under third_party/pico/lib and the language data under lang/
+are that work, vendored from the picotts distribution of the Android Open Source
+Project's external/svox. They are unmodified except for three small changes
+needed to build them for Windows, each marked in the source and listed in
+docs/notes.md.
+
+The SAPI 5 engine itself -- everything under src/, tools/ and installer/ -- is
+new work for this port and is released under the same Apache License 2.0, in
+LICENSE.
